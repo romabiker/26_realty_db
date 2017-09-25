@@ -53,7 +53,7 @@ class Advert(db.Model):
 
 @app.route('/')
 @app.route('/<int:page>')
-def ads_list(page=1):
+def ads_list(page=1, ads_per_page=15):
     oblast_district = request.args.get('oblast_district')
     new_building =  request.args.get('new_building')
     min_price = request.args.get('min_price')
@@ -71,7 +71,7 @@ def ads_list(page=1):
         ads = ads.filter(Advert.price >= min_price)
     return render_template(
         'ads_list.html',
-        ads=ads.order_by(Advert.price.asc()).paginate(page, 15),
+        ads=ads.order_by(Advert.price.asc()).paginate(page, ads_per_page),
         oblast_district=oblast_district,
         new_building=new_building,
         min_price=min_price,
