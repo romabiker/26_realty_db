@@ -21,8 +21,8 @@ class Advert(db.Model):
     premise_area       = db.Column(db.Float)
     active             = db.Column(db.Boolean, default=True)
 
-    def __init__(self, active=True, **kwargs):
-        db.Model.__init__(self, active=active, **kwargs)
+    def __init__(self, **kwargs):
+        db.Model.__init__(self, **kwargs)
 
     @classmethod
     def create(cls, **kwargs):

@@ -1,6 +1,9 @@
 # Real Estate Site
 
-Realty dashboard: filter by new building, settlement, min and max prices, is active, pagination. Script loads advertisments from url in json into sqlite3.
+Realty dashboard: filter by new building, settlement, min and max prices, is active, pagination.
+Script loads new or updates old advertisments in json format from url or path into sqlite3.
+Advertisments absent in new feed are set not active in db and not shown on site.
+
 
 Quickstart
 ----------
