@@ -30,8 +30,8 @@ class Advert(db.Model):
         return instance.save()
 
     def update(self, commit=True, **kwargs):
-            for attr, value in kwargs.items():
-                setattr(self, attr, value)
+        for attr, value in kwargs.items():
+            setattr(self, attr, value)
             return commit and self.save() or self
 
     def save(self, commit=True):
@@ -50,8 +50,8 @@ class Advert(db.Model):
         return '<Ad {advert_id}>'.format(advert_id=self.advert_id)
 
 
-def ispositive_int(data):
+def ispositive_int(input_data):
     return any(
-            (isinstance(data, (str, bytes)) and data.isdigit(),
-             isinstance(data, (int, float)))
+            (isinstance(input_data, (str, bytes)) and input_data.isdigit(),
+             isinstance(input_data, (int, float)))
     )
