@@ -176,13 +176,13 @@
                       {% if ads.page <= 1%}
                         <li class="disabled"><span>«</span></li>
                         {% else %}
-                        <li class="disabled"><span><a href="{{ url_for('ads_list', page=ads.page-1) }}" role="next">«</a></span></li>
+                        <li class=""><span><a href="{{ url_for('dashboard.ads_list', page=ads.page-1) }}" role="next">«</a></span></li>
                       {% endif %}
 
                       {%- for page in ads.iter_pages() %}
                         {% if page %}
                               {% if page != ads.page %}
-                                <li><a href="{{ url_for('ads_list', page=page) }}" role="next">{{ page }}</a></li>
+                                <li><a href="{{ url_for('dashboard.ads_list', page=page) }}" role="next">{{ page }}</a></li>
                               {% else %}
                                 <li class="active"><span>{{ page }} <span class="sr-only">(current)</span></span></li>
                               {% endif %}
